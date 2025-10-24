@@ -405,7 +405,7 @@ def cmd_num_lookup(m):
 
     command_parts = m.text.split(maxsplit=1)
     if len(command_parts) < 2:
-        return safe_send(chat_id, "⚠️ Usage: `/num 10-digit number`\nExample: `/num 9319163057`", reply_to=m.message_id)
+        return safe_send(chat_id, "⚠️ Usage: `/num 10-digit number`\nExample: `/num 9837XXXX98`", reply_to=m.message_id)
 
     mobile = last_10_digits(command_parts[1].strip())
     
@@ -496,4 +496,5 @@ if __name__ == "__main__":
             bot.infinity_polling(timeout=20, long_polling_timeout=10, skip_pending=True)
         except Exception as e:
             print(f"Main polling loop error: {e}. Restarting in 5 seconds...")
+
             time.sleep(5)
